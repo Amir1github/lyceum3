@@ -66,7 +66,18 @@ const Main = () => {
             />
           </div>
         </section>
-
+        <div class="max-w-3xl w-full text-center p-4">
+    <h1 class="text-2xl font-bold mb-4 text-gray-800">YouTube Video: Открытие Лицея 3</h1>
+    
+    <div class="relative w-full pb-[56.25%]"> 
+      <iframe 
+        class="absolute top-0 left-0 w-full h-full"
+        src="https://www.youtube.com/embed/_3ny60H_Nlo?si=DJ9Vo_VJ6Ac9lF72" 
+        title="YouTube video" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
         {/* Слайдер новостей */}
         <section className="py-8">
           <h2 className="text-3xl font-semibold mb-6 text-center md:text-left">Жизнь школы</h2>
