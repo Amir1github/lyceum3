@@ -1,101 +1,166 @@
-import Image from "next/image";
+'use client';
+import { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import Weather from "./components/weather";
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import Schedule from "./components/Schedule";
+import Citate from "./components/Citate";
+import Calendar from "./components/Calendar";
+import Link from "next/link";
 
-export default function Home() {
+const Main = () => {
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [news, setNews] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const checkAdmin = async () => {
+      try {
+        const adminPassword = localStorage.getItem('AdminPas');
+        const response = await fetch('/api/checkAdmin', {
+          headers: { 'x-admin-password': adminPassword },
+        });
+  
+        const data = await response.json();
+        setIsAdmin(data.isAdmin);
+      } catch (error) {
+        console.error('Ошибка проверки администратора:', error);
+      }
+    };
+    checkAdmin();
+
+    const fetchNews = async () => {
+      try {
+        const response = await fetch('/api/news');
+        const data = await response.json();
+        setNews(data);
+      } catch (error) {
+        console.error('Error fetching news:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchNews();
+  }, []);
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <>
+      <Navbar />
+      <main className="container mx-auto px-4 py-8 space-y-12">
+        {/* История */}
+        <section className="py-8">
+          <h2 className="text-3xl font-semibold mb-6 text-center md:text-left">История</h2>
+          <div className="flex flex-col-reverse md:flex-row items-center md:items-start md:space-x-8">
+            <p className="text-[20px] leading-relaxed text-justify w-full md:w-1/2">
+              На момент 30 августа 2019 года Президент Таджикистана Эмомали Рахмон и председатель города Душанбе приняли участие в сдаче в эксплуатацию нового современного здания лицея №3 для одаренных детей, где созданы современные условия для получения знаний подрастающими поколениями, на которых в дальнейшем будет возложено будущее нации.
+            </p>
+            <img
+              className="w-full md:w-1/2 rounded-lg shadow-lg mb-6 md:mb-0 transform transition-transform duration-300 ease-in-out hover:scale-105"
+              src="/assets/front-view.jpg"
+              alt="Фронтальный вид школы"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+          </div>
+        </section>
+
+        {/* Слайдер новостей */}
+        <section className="py-8">
+          <h2 className="text-3xl font-semibold mb-6 text-center md:text-left">Жизнь школы</h2>
+          {loading ? (
+            <div className='loader'>
+
+            </div>
+          ) : news.length > 0 ? (
+            <>
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 5000 }}
+                spaceBetween={20}
+                slidesPerView={1}
+                breakpoints={{
+                  640: { slidesPerView: 1 },
+                  768: { slidesPerView: 2 },
+                  1024: { slidesPerView: 3 },
+                }}
+              >
+                {news.map((item) => (
+                  <SwiperSlide key={item.id}>
+                    <div className="border rounded-lg p-4 shadow-md bg-white">
+                      <Link href={`/news/${item.id}`} passHref>
+                        <div className="cursor-pointer">
+                          <h2 className="text-lg font-semibold mb-2 truncate">{item.title}</h2>
+                          <p className="text-gray-600 mb-4 truncate">{item.content}</p>
+                          <div className="grid grid-cols-2 gap-2 overflow-hidden">
+                            {item.images &&
+                              item.images.map((img, idx) => (
+                                <div key={idx} className="relative">
+                                  <img
+                                    src={img}
+                                    alt={`Новость ${item.id} - изображение ${idx + 1}`}
+                                    className="w-full h-28 object-cover rounded-lg border"
+                                  />
+                                </div>
+                              ))}
+                          </div>
+                          <p className="text-gray-500 text-sm mt-2">{new Date(item.createdAt).toLocaleString()}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              <div className="text-center mt-6">
+                <Link href="/news">
+                  <button className="text-blue-500 text-decoration-underline px-6 py-2 rounded-lg transition">
+                    Смотреть все новости
+                  </button>
+                </Link>
+              </div>
+            </>
+          ) : (
+            <p className="text-center text-gray-500">Нет доступных новостей.</p>
+          )}
+        </section>
+
+        {/* Почему мы? */}
+        <section className="flex gap-[20px] items-start flex-wrap">
+          <div className="space-y-4">
+            <h2 className="text-3xl font-semibold mb-4">Почему мы?</h2>
+            <ul className="list-disc list-inside space-y-2 text-[18px] leading-relaxed">
+              <li>Опытные и увлеченные преподаватели</li>
+              <li>Современные учебные помещения</li>
+              <li>Инклюзивное и разнообразное сообщество</li>
+              <li>Акцент на академическое совершенство и внешкольную деятельность</li>
+            </ul>
+          </div>
+
+          <div className="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col md:flex-row gap-5 md:gap-5 w-full">
+            <div className="w-full md:w-2/3 lg:w-3/4 flex-shrink-0">
+              <Weather />
+            </div>
+            <div className="w-full sm:w-[75%] md:w-1/3 lg:w-1/4 flex-shrink-0 bg-white rounded-lg p-4 shadow-md mt-6 md:mt-0">
+              <Calendar />
+            </div>
+          </div>
+        </section>
+
+        {/* Цитата директора и График работы */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <Citate />
+          <div className="bg-gray-50 p-6 rounded-lg shadow-md">
+            <Schedule />
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <Footer />
+    </>
   );
-}
+};
+
+export default Main;

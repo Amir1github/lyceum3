@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Admin",
+    "email": "admin@gmail.com",
+    "message": "welcome to lyceum №3",
+    "timestamp": "2025-01-24T13:14:19.444Z",
+    "admin": true
+  },
+  {
+    "name": "parent 1",
+    "email": "parent1@gmail.com",
+    "message": "hello!",
+    "timestamp": "2025-01-24T13:14:51.054Z",
+    "admin": false
+  },
+  {
+    "name": "parent 2",
+    "email": "parent2@gmail.com",
+    "message": "it is good to see you!",
+    "timestamp": "2025-01-24T13:15:36.405Z",
+    "admin": false
+  }
+]
