@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-const messagesFilePath = path.join(process.cwd(), 'src', 'data', 'messages.json');
+const messagesFilePath = path.join(process.cwd(), 'public', 'data', 'messages.json');
 
 export async function POST(req) {
   try {

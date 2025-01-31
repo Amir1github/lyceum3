@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import path from "path";
 import { promises as fs } from "fs";
 
-const dataFilePath = path.join(process.cwd(), 'src', 'data', 'classlist.json');
+const dataFilePath = path.join(process.cwd(), 'public', 'data', 'classlist.json');
 
 async function readClassData() {
   const data = await fs.readFile(dataFilePath, 'utf-8');

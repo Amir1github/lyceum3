@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const studentsFile = path.join(process.cwd(), 'src', 'data', 'students.json');
+const studentsFile = path.join(process.cwd(), 'public', 'data', 'students.json');
 
 export async function GET(req) {
   const { searchParams } = new URL(req.url);

@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 // Определяем путь к файлу с уроками
-const filePath = path.join(process.cwd(), 'src', 'data', 'lessons.js');
+const filePath = path.join(process.cwd(), 'public', 'data', 'lessons.js');
 
 // Функция чтения уроков из файла
 const readLessons = () => {

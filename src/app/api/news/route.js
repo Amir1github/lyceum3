@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-const filePath = path.join(process.cwd(), 'src', 'data', 'news.json');
+const filePath = path.join(process.cwd(), 'public', 'data', 'news.json');
 
 export async function GET() {
   try {

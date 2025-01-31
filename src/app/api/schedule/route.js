@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-import scheduleData from '@/data/subjects'; // Import the existing scheduleData from the JS file
+import scheduleData from '../../../../public/data/subjects';
 
-const filePath = path.join(process.cwd(), 'src', 'data', 'subjects.js'); // Path to `subjects.js`
+const filePath = path.join(process.cwd(), 'public', 'data', 'subjects.js'); // Path to `subjects.js`
 
 // Function to write updates back to `subjects.js`
 function saveScheduleData(data) {

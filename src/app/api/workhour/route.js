@@ -4,7 +4,7 @@ import path from 'path';
 
 // Путь к файлу JSON
 
-const filePath = path.join(process.cwd(), 'src', 'data', 'workhour.json');// Обработчик GET-запроса
+const filePath = path.join(process.cwd(), 'public', 'data', 'workhour.json');// Обработчик GET-запроса
 export async function GET() {
   try {
     const fileData = fs.readFileSync(filePath, 'utf-8');
