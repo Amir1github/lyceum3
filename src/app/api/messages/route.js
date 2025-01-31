@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const messagesFilePath = path.join(process.cwd(), 'src', 'data', 'messages.json');
+const messagesFilePath = path.join(process.cwd(), 'public', 'data', 'messages.json');
 
 // Обработка GET запроса для получения сообщений
 export async function GET(req) {

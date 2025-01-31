@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const vacanciesFilePath = path.join(process.cwd(), 'src', 'data', 'vacancies.json');
+const vacanciesFilePath = path.join(process.cwd(), 'public', 'data', 'vacancies.json');
 
 // Генерация уникального id
 const generateId = () => '_' + Math.random().toString(36).substr(2, 9);

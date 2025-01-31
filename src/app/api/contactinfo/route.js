@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const filePath = path.join(process.cwd(), 'src', 'data', 'contact.json');
+const filePath = path.join(process.cwd(), 'public', 'data', 'contact.json');
 
 export async function GET(req) {
   try {
