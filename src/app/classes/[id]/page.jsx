@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Lessons from './Lessons'; // Импортируем дочерний компонент
+import Lessons from './lessons'; // Импортируем дочерний компонент
 import Navbar from '@/app/components/Navbar';
 import Footer from '@/app/components/Footer';
 
