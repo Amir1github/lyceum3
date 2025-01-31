@@ -5,16 +5,24 @@ export default function Footer() {
   const [isModalOpen, setIsModalOpen] = useState(false); // Для управления модалкой
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [isClient, setIsClient] = useState(false); // Состояние для проверки клиента
 
   // Проверяем значение из localStorage при монтировании компонента
   useEffect(() => {
+    // Устанавливаем флаг, что код выполняется на клиенте
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return; // Не выполняем этот код на сервере
+
     const checkAdmin = async () => {
       try {
         const adminPassword = localStorage.getItem('AdminPas');
         const response = await fetch('/api/checkAdmin', {
           headers: { 'x-admin-password': adminPassword },
         });
-  
+
         const data = await response.json();
         setIsAdmin(data.isAdmin);
       } catch (error) {
@@ -22,7 +30,7 @@ export default function Footer() {
       }
     };
     checkAdmin();
-  }, []);
+  }, [isClient]);
 
   const handlePasswordSubmit = () => {
     if (password === '052') {

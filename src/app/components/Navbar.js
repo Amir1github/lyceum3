@@ -1,12 +1,11 @@
 'use client'
 import { useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
 
- 
-import { useRouter } from 'next/navigation'
- 
 export default function Page() {
-  const router = useRouter()
+  const router = useRouter();
+
   useEffect(() => {
     const menuBtn = document.getElementById('menu-btn');
     const menu = document.getElementById('menu');
@@ -26,7 +25,8 @@ export default function Page() {
       }
     };
   }, []);
-  const isActive = (path) => window.location.pathname === path ? 'text-yellow-500' : 'text-gray-700';
+
+  const isActive = (path) => router.pathname === path ? 'text-yellow-500' : 'text-gray-700';
 
   
   return (
