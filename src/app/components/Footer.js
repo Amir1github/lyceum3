@@ -100,7 +100,7 @@ export default function Footer() {
               <a href="/chat" className="hover:text-gray-400 transition">Общий чат</a>
             </li>
             <li>
-              <a href="/about" className="hover:text-gray-400 transition">О нас</a>
+              <a href="/" className="hover:text-gray-400 transition">О нас</a>
             </li>
             <li>
               <a href="/vacancies" className="hover:text-gray-400 transition">Вакансии</a>

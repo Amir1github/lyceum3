@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useEffect, useState } from "react";
@@ -8,17 +7,19 @@ import Schedule from "../components/Schedule";
 import Map from "./map";
 import SendMessage from "../components/sendmessage";
 import '@/app/styles/loader.css';
+
 const Contact = () => {
-  const [isAdmin, setIsAdmin] = useState(false); // Проверка на администратора
-  const [contactInfo, setContactInfo] = useState(null); // Данные контактов
-  const [editedInfo, setEditedInfo] = useState({}); // Изменённые данные контактов
-  useEffect(()=>{
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [contactInfo, setContactInfo] = useState(null);
+  const [editedInfo, setEditedInfo] = useState({});
+
+  useEffect(() => {
     const fetchContactInfo = async () => {
       try {
         const response = await fetch('/api/contactinfo');
         const data = await response.json();
         setContactInfo(data);
-        setEditedInfo(data); // Копируем данные для редактирования
+        setEditedInfo(data);
       } catch (error) {
         console.error('Ошибка при получении контактной информации:', error);
       }
@@ -30,7 +31,7 @@ const Contact = () => {
         const response = await fetch('/api/checkAdmin', {
           headers: { 'x-admin-password': adminPassword },
         });
-  
+
         const data = await response.json();
         setIsAdmin(data.isAdmin);
       } catch (error) {
@@ -40,14 +41,11 @@ const Contact = () => {
     checkAdmin();
     fetchContactInfo();
   }, []);
- 
-  
-  
+
   const handleInputChange = (field, value) => {
     setEditedInfo((prev) => ({ ...prev, [field]: value }));
   };
 
-  // Сохранение изменений
   const handleSave = async () => {
     try {
       const response = await fetch('/api/contactinfo', {
@@ -62,7 +60,6 @@ const Contact = () => {
         const updatedInfo = await response.json();
         setContactInfo(updatedInfo);
         alert('Изменения успешно сохранены!');
-
       } else {
         alert('Не удалось сохранить изменения.');
       }
@@ -72,20 +69,24 @@ const Contact = () => {
   };
 
   if (!contactInfo) {
-    return <div className='flex justify-center items-center flex-col gap-[30px]'><p className="text-center mt-8">Загрузка данных...</p><div className="loader"></div></div>;;
+    return (
+      <div className='flex justify-center items-center flex-col gap-[30px]'>
+        <p className="text-center mt-8">Загрузка данных...</p>
+        <div className="loader"></div>
+      </div>
+    );
   }
+
   return (
     <>
       <Navbar />
       <div className="container mx-auto px-4 py-8 space-y-12">
-        {/* Основной блок с картой и контактной информацией */}
-        <div className="flex flex-wrap justify-between items-start gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Контактная информация */}
-          <div className="w-[30px] lg:w-1/3 space-y-4">
+          <div className="space-y-4">
             <h1 className="text-2xl font-bold text-gray-800">Контактная информация</h1>
             <div>
               <p className="text-lg">Адрес: кӯч. Маҳмадулло Холов, н. И. Сомонӣ 33, Душанбе</p>
-              
             </div>
             <div>
               <p className="text-lg">Email:</p>
@@ -133,26 +134,26 @@ const Contact = () => {
               )}
             </div>
             {isAdmin && (
-          <button
-            onClick={handleSave}
-            className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-200"
-          >
-            Сохранить изменения
-          </button>
-        )}
+              <button
+                onClick={handleSave}
+                className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-200"
+              >
+                Сохранить изменения
+              </button>
+            )}
           </div>
 
-          <Schedule />
-          <Map />
+          <div className="lg:col-span-2 space-y-8">
+            <Schedule />
+            <Map />
+          </div>
         </div>
 
-      
         <SendMessage />
       </div>
       <Footer />
     </>
   );
 };
-
 
 export default Contact;
