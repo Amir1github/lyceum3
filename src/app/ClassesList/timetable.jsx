@@ -15,7 +15,7 @@ const ScheduleTable = ({ className }) => {
   ]);
 
   const days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
-  const [dayOfWeek, setDayOfWeek] = useState(days[new Date().getDay()]);
+  const [dayOfWeek, setDayOfWeek] = useState(days[(new Date().getDay() + 6) % 7]);
   const [isAdmin, setIsAdmin] = useState(false);
 
   // Проверяем, является ли пользователь администратором

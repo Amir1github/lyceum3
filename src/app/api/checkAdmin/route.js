@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const ADMIN_PASSWORD = '052'; // Replace with your admin password
+const ADMIN_PASSWORD = 'h586t'; // Replace with your admin password
 
 // Handle GET requests
 export async function GET(request) {
