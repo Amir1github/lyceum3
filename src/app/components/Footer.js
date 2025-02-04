@@ -33,8 +33,8 @@ export default function Footer() {
   }, [isClient]);
 
   const handlePasswordSubmit = () => {
-    if (password === '052') {
-      localStorage.setItem('AdminPas', '052'); // Сохраняем пароль в localStorage
+    if (password === 'h586t') {
+      localStorage.setItem('AdminPas', 'h586t'); // Сохраняем пароль в localStorage
       setIsAdmin(true); // Устанавливаем состояние в true
       setIsModalOpen(false); // Закрываем модалку
       setPasswordError(''); // Очищаем ошибку
