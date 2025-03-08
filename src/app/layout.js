@@ -18,15 +18,15 @@ export default function RootLayout({ children }) {
         {/* Open Graph for Social Media */}
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
-        <meta property="og:image" content="/assets/logo.png" />
-        <meta property="og:url" content="https://lyceum3.com" />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:url" content="https://lyceum3-production.up.railway.app/" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
-        <meta name="twitter:image" content="/images/lyceum-banner.jpg" />
+
 
         {/* Structured Data for SEO */}
         <script type="application/ld+json">
@@ -34,15 +34,9 @@ export default function RootLayout({ children }) {
             "@context": "https://schema.org",
             "@type": "EducationalOrganization",
             "name": "Lyceum №3",
-            "url": "https://lyceum3.com",
+            "url": "https://lyceum3-production.up.railway.app",
             "description": metadata.description,
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "123 Main Street",
-              "addressLocality": "Your City",
-              "postalCode": "12345",
-              "addressCountry": "Your Country"
-            }
+            "logo": "https://lyceum3-production.up.railway.app/logo.png"
           })}
         </script>
       </head>
