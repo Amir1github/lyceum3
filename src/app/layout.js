@@ -14,7 +14,8 @@ export default function RootLayout({ children }) {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={metadata.description} />
-        
+        <meta name="robots" content="index, follow" />
+        <meta name="google-site-verification" content="5BLeti4HwbsuoBvv8zzSvdJy2qJsQ7_3tsFgKJm_Ud0" />
         {/* Open Graph for Social Media */}
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
