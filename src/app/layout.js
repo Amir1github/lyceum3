@@ -10,7 +10,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* Title and Meta Tags */}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/logo.png" type="image/png" />
+        <title>Lyceum №3</title>
+
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={metadata.description} />
