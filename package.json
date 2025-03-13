@@ -12,6 +12,7 @@
     "axios": "^1.7.9",
     "cloudinary": "^2.5.1",
     "cors": "^2.8.5",
+    "firebase": "^11.4.0",
     "leaflet": "^1.9.4",
     "mapbox-gl": "^3.9.4",
     "next": "15.1.0",
