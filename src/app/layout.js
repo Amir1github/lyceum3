@@ -12,16 +12,17 @@ export default function RootLayout({ children }) {
         {/* Title and Meta Tags */}
         <link rel="icon" href="/assets/logo.png" type="image/png" />
         <title>Lyceum №3</title>
-
+        <meta name="title" content="Lyceum3"></meta>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={metadata.description} />
         <meta name="robots" content="index, follow" />
         <meta name="google-site-verification" content="5BLeti4HwbsuoBvv8zzSvdJy2qJsQ7_3tsFgKJm_Ud0" />
         {/* Open Graph for Social Media */}
+        
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
-        <meta property="og:image" content="/logo.png" />
+        <meta property="og:image" content="https://raw.githubusercontent.com/Amir1github/lyceum3/refs/heads/main/public/assets/logo.png" />
         <meta property="og:url" content="https://lyceum3-production.up.railway.app/" />
         <meta property="og:type" content="website" />
 
