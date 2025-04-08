@@ -130,7 +130,7 @@ export default function Footer() {
         <div className="w-full md:w-1/3 lg:w-1/4">
           <div className="border-gray-600 border-2 p-4 rounded-xl flex flex-col items-center text-center">
             <img src='/assets/qr-code.jpg' alt="QR Code" />
-            <p className="text-sm text-gray-400 mb-4">Донат для веб-сайта</p>
+            <p className="text-sm text-gray-400 mb-4"></p>
             <div className="flex justify-center space-x-4">
               <a
                 href="https://www.facebook.com/litseyi3"
