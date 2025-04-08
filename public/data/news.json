@@ -4,8 +4,8 @@
     "title": "Школьная ярмарка: объявления и события",
     "content": "Наши ученики подготовили множество интересных проектов для школьной ярмарки, которая пройдет на следующей неделе. Присоединяйтесь к нам!",
     "images": [
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608447/id4zpivvh563ldszxgaz.png",
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1737274517/whgtz6qcflhvrjufyoif.jpg"
+      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608447/hthzxdi8m0siwgqegoph.jpg",
+      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608449/pv4yfrdb05hvrf9rxq3i.jpg"
     ],
     "createdAt": "2025-01-19T08:15:17.941Z"
   },
@@ -24,8 +24,8 @@
     "title": "Школьный спорт: предстоящие соревнования",
     "content": "На следующей неделе состоятся школьные соревнования по футболу и баскетболу. Приглашаем всех поддержать команду!",
     "images": [
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608447/id4zpivvh563ldszxgaz.png",
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1737274517/whgtz6qcflhvrjufyoif.jpg"
+      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743607830/yvwujmyhvhozssxrvyim.jpg",
+      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743607941/rgpde8u1mzgd3oimzc1a.jpg"
     ],
     "createdAt": "2025-01-21T10:35:25.456Z"
   },
@@ -34,38 +34,18 @@
     "title": "Экскурсия в музей истории",
     "content": "Ученики 8-х классов посетили музей истории города, где узнали много интересных фактов о нашем регионе. Экскурсия прошла очень познавательно!",
     "images": [
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608447/id4zpivvh563ldszxgaz.png",
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1737274517/whgtz6qcflhvrjufyoif.jpg"
+      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608163/xhwdjga8j4t8tfe33ctj.jpg",
+      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608163/xhwdjga8j4t8tfe33ctj.jpg"
     ],
     "createdAt": "2025-01-22T11:45:33.789Z"
-  },
-  {
-    "id": 1737274962535,
-    "title": "Книга месяца: 'Как стать лидером'",
-    "content": "В этом месяце книга для обсуждения в школьном клубе — 'Как стать лидером'. Присоединяйтесь к нам и делитесь своим мнением!",
-    "images": [
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608447/id4zpivvh563ldszxgaz.png",
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1737274517/whgtz6qcflhvrjufyoif.jpg"
-    ],
-    "createdAt": "2025-01-23T12:55:43.012Z"
-  },
-  {
-    "id": 1737275074046,
-    "title": "Мастер-класс по фотографии",
-    "content": "В эту субботу пройдет мастер-класс по фотографии, который проведет известный фотограф города. Мест ограничено, не упустите шанс!",
-    "images": [
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608447/id4zpivvh563ldszxgaz.png",
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1737274517/whgtz6qcflhvrjufyoif.jpg"
-    ],
-    "createdAt": "2025-01-24T14:05:50.456Z"
   },
   {
     "id": 1737275186877,
     "title": "Подготовка к олимпиаде по математике",
     "content": "Наши старшеклассники активно готовятся к олимпиаде по математике, которая состоится в следующем месяце. Мы уверены в их победе!",
     "images": [
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608447/id4zpivvh563ldszxgaz.png",
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1737274517/whgtz6qcflhvrjufyoif.jpg"
+      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608338/n2xdituazotocfb84kap.jpg",
+      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608338/n2xdituazotocfb84kap.jpg"
     ],
     "createdAt": "2025-01-25T15:15:58.789Z"
   },
@@ -74,8 +54,8 @@
     "title": "Новое оборудование в лаборатории",
     "content": "Школа приобрела новое оборудование для химической лаборатории, что позволяет нашим ученикам проводить более интересные эксперименты.",
     "images": [
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608447/id4zpivvh563ldszxgaz.png",
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1737274517/whgtz6qcflhvrjufyoif.jpg"
+      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608069/lnfvg4gpoiui5rwczpoz.jpg",
+      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608071/bydhckr74wnnznovfp1t.jpg"
     ],
     "createdAt": "2025-01-26T16:25:02.345Z"
   },
@@ -84,8 +64,8 @@
     "title": "Школьный театральный конкурс",
     "content": "В конце февраля состоится школьный театральный конкурс. Приглашаем всех участвовать и поддержать наших талантливых актеров!",
     "images": [
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608447/id4zpivvh563ldszxgaz.png",
-      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1737274517/whgtz6qcflhvrjufyoif.jpg"
+      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743606453/pnupgx5s5mlqyixeng4s.jpg",
+      "https://res.cloudinary.com/dzbuo2vqt/image/upload/v1743608447/hthzxdi8m0siwgqegoph.jpg"
     ],
     "createdAt": "2025-01-27T17:35:11.123Z"
   }
