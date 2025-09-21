@@ -57,7 +57,7 @@ const Main = () => {
           <h2 className="text-3xl font-semibold mb-6 text-center md:text-left">История</h2>
           <div className="flex flex-col-reverse md:flex-row items-center md:items-start md:space-x-8">
             <p className="text-[20px] leading-relaxed text-justify w-full md:w-1/2">
-              На момент 30 августа 2019 года Президент Таджикистана Эмомали Рахмон и председатель города Душанбе приняли участие в сдаче в эксплуатацию нового современного здания лицея №3 для одаренных детей, где созданы современные условия для получения знаний подрастающими поколениями, на которых в дальнейшем будет возложено будущее нации.
+              На момент 30 августа 2019 года Президент Таджикистана Эмомали Рахмон и председатель города Душанбе приняли участие в сдаче в эксплуатацию нового современного здания лицея   для одаренных детей, где созданы современные условия для получения знаний подрастающими поколениями, на которых в дальнейшем будет возложено будущее нации.
             </p>
             <img
               className="w-full md:w-1/2 rounded-lg shadow-lg mb-6 md:mb-0 transform transition-transform duration-300 ease-in-out hover:scale-105"
@@ -67,12 +67,12 @@ const Main = () => {
           </div>
         </section>
         <div class="max-w-3xl w-full text-center p-4">
-    <h1 class="text-2xl font-bold mb-4 text-gray-800">YouTube Video: Открытие Лицея 3</h1>
+    <h1 class="text-2xl font-bold mb-4 text-gray-800">YouTube Video: Открытие Нового корпуса Кафолат</h1>
     
     <div class="relative w-full pb-[56.25%]"> 
       <iframe 
         class="absolute top-0 left-0 w-full h-full"
-        src="https://www.youtube.com/embed/_3ny60H_Nlo?si=DJ9Vo_VJ6Ac9lF72" 
+        src="https://www.youtube.com/embed/cKHSwDXwKwc?si=5u4Gf_mWEaGQIgqa" 
         title="YouTube video" 
         allowfullscreen>
       </iframe>

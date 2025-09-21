@@ -40,7 +40,7 @@ export default function NewsDetails({ params }) {
   }
 
   if (error) {
-    return <p className="text-red-600 text-center mt-8">Ошибка: {error}</p>;
+    return <p className="text-red-700 text-center mt-8">Ошибка: {error}</p>;
   }
 
   if (!newsItem) {

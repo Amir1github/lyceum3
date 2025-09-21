@@ -203,7 +203,7 @@ const Lessons = ({ classId }) => {
   }
 
   if (error) {
-    return <div className="text-center mt-8 text-red-500">Ошибка: {error}</div>;
+    return <div className="text-center mt-8 text-red-700">Ошибка: {error}</div>;
   }
 
   const decodedClassName = decodeURIComponent(classId);
@@ -280,7 +280,7 @@ const Lessons = ({ classId }) => {
                       {teachers.map((teacher, index) => (
                         <div key={index} className="mb-2">
                           <button
-                            className="bg-red-500 text-white px-2 py-1 rounded"
+                            className="bg-red-700 text-white px-2 py-1 rounded"
                             onClick={() => deleteGroup(lesson, teacher.full_name, decodedClassName)}
                           >
                             Удалить

@@ -11,7 +11,8 @@ const Map = ()=>{
           const mapElement = document.getElementById("map");
           if (mapElement) {
             const map = new google.maps.Map(mapElement, {
-              center: { lat: 38.590152, lng: 68.789922 },
+              center: { lat: 38.578937, lng: 68.744466 },
+              
               zoom: 18,
               mapTypeId: "satellite",
               mapTypeControl: false,

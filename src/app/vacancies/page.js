@@ -119,7 +119,7 @@ const Vacancies = () => {
         {loading ? (
           <div className='flex justify-center items-center flex-col gap-[30px]'><p className="text-center mt-8">Загрузка данных...</p><div className="loader"></div></div>
         ) : error ? (
-          <p className="text-red-500">{error}</p>
+          <p className="text-red-700">{error}</p>
         ) : (
             <div className="space-y-4">
             {vacancies.map((vacancy) => (
@@ -147,7 +147,7 @@ const Vacancies = () => {
           
                 {isAdmin && (
                   <button
-                    className="bg-red-500 text-white px-4 py-2 rounded-lg mt-2 hover:bg-red-600"
+                    className="bg-red-700 text-white px-4 py-2 rounded-lg mt-2 hover:bg-red-700"
                     onClick={() => handleDeleteVacancy(vacancy.id)}
                   >
                     Удалить

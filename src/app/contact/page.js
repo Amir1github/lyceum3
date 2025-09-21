@@ -86,7 +86,7 @@ const Contact = () => {
           <div className="space-y-4">
             <h1 className="text-2xl font-bold text-gray-800">Контактная информация</h1>
             <div>
-              <p className="text-lg">Адрес: кӯч. Маҳмадулло Холов, н. И. Сомонӣ 33, Душанбе</p>
+              <p className="text-lg">Адрес: Душанбе, просп. Нусратулло Махсума, 77/6</p>
             </div>
             <div>
               <p className="text-lg">Email:</p>

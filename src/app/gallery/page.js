@@ -127,7 +127,7 @@ export default function GalleryPage() {
 
     <div className="p-4">
         <h1 className="text-2xl font-bold mb-4">Gallery</h1>
-        {error && <p className="text-red-500 mb-2">{error}</p>}
+        {error && <p className="text-red-700 mb-2">{error}</p>}
 
         {isAdmin && (
             <div className="mb-4">
@@ -159,7 +159,7 @@ export default function GalleryPage() {
                         />
                         {isAdmin && (
                             <button
-                                className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-sm rounded-full"
+                                className="absolute top-2 right-2 bg-red-700 text-white px-2 py-1 text-sm rounded-full"
                                 onClick={() => handleDelete(imageUrl)}
                             >
                                 Delete

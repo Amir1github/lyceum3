@@ -112,7 +112,7 @@ const ClassList = () => {
   }
 
   if (error) {
-    return <p className="text-center mt-8 text-red-500">Ошибка: {error}</p>;
+    return <p className="text-center mt-8 text-red-700">Ошибка: {error}</p>;
   }
 
   return (
@@ -155,7 +155,7 @@ const ClassList = () => {
                 <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden w-full sm:w-48">
                   <button
                     onClick={() => toggleSection(`${groupIndex}-${index}`)}
-                    className="w-full bg-yellow-400 text-white p-4 font-medium hover:bg-yellow-300 transition-all rounded-lg"
+                    className="w-full bg-red-700 text-white p-4 font-medium hover:bg-red-300 transition-all rounded-lg"
                   >
                     Класс {section.name}
                   </button>
@@ -176,7 +176,7 @@ const ClassList = () => {
                           {isAdmin && (
                             <button
                               onClick={() => deleteClassLetter(section.name, letter)}
-                              className="text-red-500 hover:underline ml-4"
+                              className="text-red-700 hover:underline ml-4"
                             >
                               Удалить
                             </button>

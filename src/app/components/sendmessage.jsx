@@ -109,7 +109,7 @@ const SendMessage = () => {
         >
           {loading ? 'Отправка...' : isAdmin ? 'Отправить как админ' : 'Отправить сообщение'}
         </button>
-        {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
+        {error && <div className="text-red-700 text-sm mt-2">{error}</div>}
       </form>
     </div>
   );

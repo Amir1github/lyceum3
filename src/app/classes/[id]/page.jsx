@@ -151,7 +151,7 @@ const ClassLessons = ({ params }) => {
                 {isAdmin && (
                   <button
                     onClick={() => deleteStudent(student)}
-                    className="bg-red-500 text-white px-3 py-1 mt-2 rounded hover:bg-red-400"
+                    className="bg-red-700 text-white px-3 py-1 mt-2 rounded hover:bg-red-700"
                   >
                     Удалить ученика
                   </button>

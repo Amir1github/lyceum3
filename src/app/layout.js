@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Lyceum №3 - Excellence in Education',
-  description: 'Official website of Lyceum №3, dedicated to academic excellence, innovation, and student development.',
+  title: 'Kafolat   - Excellence in Education',
+  description: 'Official website of Kafolat  , dedicated to academic excellence, innovation, and student development.',
 };
 
 import './styles/globals.css';
@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
       <head>
         {/* Title and Meta Tags */}
         <link rel="icon" href="/assets/logo.png" type="image/png" />
-        <title>Lyceum №3</title>
+        <title>Kafolat  </title>
         <meta name="title" content="Lyceum3"></meta>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "EducationalOrganization",
-            "name": "Lyceum №3",
+            "name": "Kafolat  ",
             "url": "https://lyceum3-production.up.railway.app",
             "description": metadata.description,
             "logo": "https://lyceum3-production.up.railway.app/logo.png"

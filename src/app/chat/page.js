@@ -133,7 +133,7 @@ const Chat = () => {
                 {isAdmin && (
                   <button
                     className={`px-4 py-1 rounded-lg mt-2 ${
-                      msg.admin ? 'bg-red-700 text-white' : 'bg-red-500 text-white'
+                      msg.admin ? 'bg-red-700 text-white' : 'bg-red-700 text-white'
                     }`}
                     onClick={() => handleDelete(msg.name, msg.email, msg.message)}
                   >
@@ -151,7 +151,7 @@ const Chat = () => {
         {/* Кнопка очистки чата для администратора */}
         {isAdmin && (
           <button
-            className="bg-red-600 text-white px-6 py-2 rounded-lg shadow hover:bg-red-700 transition duration-200 w-full mb-4"
+            className="bg-red-700 text-white px-6 py-2 rounded-lg shadow hover:bg-red-700 transition duration-200 w-full mb-4"
             onClick={handleClearAll}
           >
             Очистить весь чат

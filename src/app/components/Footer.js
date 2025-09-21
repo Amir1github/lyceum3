@@ -63,7 +63,7 @@ export default function Footer() {
               className="border border-gray-300 p-2 w-full mb-4 text-black"
               placeholder="Пароль"
             />
-            {passwordError && <p className="text-red-500 mb-4">{passwordError}</p>}
+            {passwordError && <p className="text-red-700 mb-4">{passwordError}</p>}
             <div className="flex justify-between">
               <button
                 onClick={handlePasswordSubmit}
@@ -86,7 +86,7 @@ export default function Footer() {
         {/* Логотип */}
         <div className="mb-8 md:mb-0">
           <img
-            className="w-[100px] h-[100px] mx-auto md:mx-0"
+            className="w-[150px] h-[150px] mx-auto md:mx-0"
             src="/assets/logo.png"
             alt="Logo"
           />
@@ -106,7 +106,7 @@ export default function Footer() {
               <a href="/vacancies" className="hover:text-gray-400 transition">Вакансии</a>
             </li>
             <li>
-              <a href="/news" className="hover:text-gray-400 transition">Новости Lyceum №3</a>
+              <a href="/news" className="hover:text-gray-400 transition">Новости Kafolat  </a>
             </li>
             <li>
               {!isAdmin && (
@@ -130,10 +130,11 @@ export default function Footer() {
         <div className="w-full md:w-1/3 lg:w-1/4">
           <div className="border-gray-600 border-2 p-4 rounded-xl flex flex-col items-center text-center">
             <img src='/assets/qr-code.jpg' alt="QR Code" />
-            <p className="text-sm text-gray-400 mb-4"></p>
+            <p className="text-sm text-gray-400 mb-4">Следите за новостями в соцсетях</p>
+            <div className='flex gap-5'>
             <div className="flex justify-center space-x-4">
               <a
-                href="https://www.facebook.com/litseyi3"
+                href="https://www.facebook.com/profile.php?id=129761550559062"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="App Store"
@@ -145,12 +146,44 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
+            <div className="flex justify-center space-x-4">
+              <a
+                href="https://www.instagram.com/_kafolat_/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="App Store"
+              >
+                <svg
+  id="instagram"
+  fill="rgb(217, 50, 117)"
+  viewBox="0 0 169.063 169.063"
+  width="30"
+  height="30"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g>
+    <path d="M122.406,0H46.654C20.929,0,0,20.93,0,46.655v75.752c0,25.726,20.929,46.655,46.654,46.655h75.752
+      c25.727,0,46.656-20.93,46.656-46.655V46.655C169.063,20.93,148.133,0,122.406,0z M154.063,122.407
+      c0,17.455-14.201,31.655-31.656,31.655H46.654C29.2,154.063,15,139.862,15,122.407V46.655C15,29.201,29.2,15,46.654,15h75.752
+      c17.455,0,31.656,14.201,31.656,31.655V122.407z" />
+    <path d="M84.531,40.97c-24.021,0-43.563,19.542-43.563,43.563c0,24.02,19.542,43.561,43.563,43.561s43.563-19.541,43.563-43.561
+      C128.094,60.512,108.552,40.97,84.531,40.97z M84.531,113.093c-15.749,0-28.563-12.812-28.563-28.561
+      c0-15.75,12.813-28.563,28.563-28.563s28.563,12.813,28.563,28.563C113.094,100.281,100.28,113.093,84.531,113.093z" />
+    <path d="M129.921,28.251c-2.89,0-5.729,1.17-7.77,3.22c-2.051,2.04-3.23,4.88-3.23,7.78c0,2.891,1.18,5.73,3.23,7.78
+      c2.04,2.04,4.88,3.22,7.77,3.22c2.9,0,5.73-1.18,7.78-3.22c2.05-2.05,3.22-4.89,3.22-7.78c0-2.9-1.17-5.74-3.22-7.78
+      C135.661,29.421,132.821,28.251,129.921,28.251z" />
+  </g>
+</svg>
+
+              </a>
+            </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="mt-10 text-gray-400 font-bold pt-4 text-center text-sm">
-        © 2024 СОУ «Лицей №3 барои кудакони болаекат». кӯч. Маҳмадулло Холов, н. И. Сомонӣ 33, Душанбе
+        © 2025 СОУ «Гимназия Кафолат». Душанбе, просп. Нусратулло Махсума, 77/6
       </div>
     </footer>
   );
