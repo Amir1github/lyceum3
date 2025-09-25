@@ -73,7 +73,7 @@ export default function NewsDetails({ params }) {
             </div>
           ))}
         </div>
-        <p className="text-gray-500">Дата: {new Date(newsItem.createdAt).toLocaleString()}</p>
+        <p className="text-gray-500">Дата: {new Date(newsItem.created_at).toLocaleString()}</p>
       </div>
       <Footer />
     </>

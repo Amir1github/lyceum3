@@ -124,8 +124,9 @@ const Chat = () => {
                 <div className="flex justify-between">
                   <strong>{msg.name}</strong>
                   <span className="text-sm">
-                    {new Date(msg.timestamp).toLocaleString()}
-                  </span>
+  {msg.created_at ? new Date(msg.created_at).toLocaleString() : "—"}
+</span>
+
                 </div>
                 <p>{msg.message}</p>
 

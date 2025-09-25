@@ -1,18 +1,12 @@
-import fs from 'fs';
-import path from 'path';
-
-const vacanciesFilePath = path.join(process.cwd(), 'public', 'data', 'vacancies.json');
-
-// Генерация уникального id
-const generateId = () => '_' + Math.random().toString(36).substr(2, 9);
+import { supabaseHelpers } from '../../../../lib/supabase';
 
 // Обработка GET запроса для получения списка вакансий
 export async function GET(req) {
   try {
-    const fileData = fs.readFileSync(vacanciesFilePath, 'utf-8');
-    const vacancies = JSON.parse(fileData);
+    const vacancies = await supabaseHelpers.getVacancies();
     return new Response(JSON.stringify(vacancies), { status: 200 });
   } catch (error) {
+    console.error('Error fetching vacancies:', error);
     return new Response(
       JSON.stringify({ error: 'Ошибка при получении списка вакансий' }),
       { status: 500 }
@@ -34,25 +28,18 @@ export async function POST(req) {
       );
     }
 
-    // Чтение текущих вакансий
-    const fileData = fs.readFileSync(vacanciesFilePath, 'utf-8');
-    const vacancies = JSON.parse(fileData);
+    const vacancyData = {
+      position,
+      salary,
+      hours_per_week: hoursPerWeek,
+      description,
+      requirements
+    };
 
-    // Генерация id для новой вакансии
-    const newVacancyWithId = { ...newVacancy, id: generateId() };
-
-    // Добавляем новую вакансию
-    vacancies.push(newVacancyWithId);
-
-    // Записываем обновлённые вакансии обратно в файл
-    fs.writeFileSync(
-      vacanciesFilePath,
-      JSON.stringify(vacancies, null, 2),
-      'utf-8'
-    );
-
-    return new Response(JSON.stringify(newVacancyWithId), { status: 201 });
+    const vacancy = await supabaseHelpers.addVacancy(vacancyData);
+    return new Response(JSON.stringify(vacancy), { status: 201 });
   } catch (error) {
+    console.error('Error adding vacancy:', error);
     return new Response(
       JSON.stringify({ error: 'Ошибка при добавлении вакансии' }),
       { status: 500 }
@@ -61,47 +48,26 @@ export async function POST(req) {
 }
 
 // Обработка DELETE запроса для удаления вакансии
-// Обработка DELETE запроса для удаления вакансии
 export async function DELETE(req) {
-    const url = new URL(req.url); // Создаем объект URL из запроса
-    const id = url.searchParams.get('id'); // Получаем id из query строки
-  
-    // Проверяем, если id не передан
-    if (!id) {
-      return new Response(
-        JSON.stringify({ error: 'ID вакансии не указан' }),
-        { status: 400 }
-      );
-    }
-  
-    try {
-      // Чтение текущих вакансий из файла
-      const fileData = fs.readFileSync(vacanciesFilePath, 'utf-8');
-      let vacancies = JSON.parse(fileData);
-  
-      // Приводим ID вакансий и ID из запроса к строковому типу перед фильтрацией
-      vacancies = vacancies.filter((vacancy) => String(vacancy.id) !== id);
-  
-      // Проверяем, если вакансия не найдена
-      if (vacancies.length === JSON.parse(fileData).length) {
-        return new Response(
-          JSON.stringify({ error: 'Вакансия с таким id не найдена' }),
-          { status: 404 }
-        );
-      }
-  
-      // Записываем обновлённый список вакансий обратно в файл
-      fs.writeFileSync(
-        vacanciesFilePath,
-        JSON.stringify(vacancies, null, 2),
-        'utf-8'
-      );
-  
-      return new Response(null, { status: 204 }); // Возвращаем успешный статус
-    } catch (error) {
-      return new Response(
-        JSON.stringify({ error: 'Ошибка при удалении вакансии' }),
-        { status: 500 }
-      );
-    }
+  const url = new URL(req.url);
+  const id = url.searchParams.get('id');
+
+  // Проверяем, если id не передан
+  if (!id) {
+    return new Response(
+      JSON.stringify({ error: 'ID вакансии не указан' }),
+      { status: 400 }
+    );
   }
+
+  try {
+    await supabaseHelpers.deleteVacancy(id);
+    return new Response(null, { status: 204 });
+  } catch (error) {
+    console.error('Error deleting vacancy:', error);
+    return new Response(
+      JSON.stringify({ error: 'Ошибка при удалении вакансии' }),
+      { status: 500 }
+    );
+  }
+}

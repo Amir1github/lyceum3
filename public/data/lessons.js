@@ -383,9 +383,7 @@ export default [
         "first_name": "Гулбаҳор",
         "last_name": "Раҳимова",
         "middle_name": "Яқубовна",
-        "groups": [
-          "1А"
-        ]
+        "groups": []
       },
       {
         "first_name": "Гулзода",
@@ -865,6 +863,14 @@ export default [
         "middle_name": "Одилҷоновна",
         "groups": [
           "8Д"
+        ]
+      },
+      {
+        "first_name": "Eлбаҳор",
+        "last_name": "Раҳимова",
+        "middle_name": "Яқубовна",
+        "groups": [
+          "1А"
         ]
       }
     ]
@@ -3327,14 +3333,6 @@ export default [
           "9Г",
           "9Д",
           "9Е"
-        ]
-      },
-      {
-        "first_name": "Гулбаҳор",
-        "last_name": "Раҳимова",
-        "middle_name": "Яқубовна",
-        "groups": [
-          "1А"
         ]
       },
       {

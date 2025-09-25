@@ -170,7 +170,7 @@ export default function NewsPage() {
                           </div>
                         ))}
                     </div>
-                    <p className="text-[gray]">{new Date(item.createdAt).toLocaleString()}</p>
+                    <p className="text-[gray]">{new Date(item.created_at).toLocaleString()}</p>
                   </div>
                 </Link>
 
